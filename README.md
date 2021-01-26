@@ -12,7 +12,7 @@ conda install nextflow fastqc bbmap
 
 
 ## Workflow (Based on Lexogen's analysis guide)
-This workflow consider 50bp single-end sequencing.
+Current workflow consider 50bp single-end sequencing and gencode mouse genome.
 
 ### Convert GTF to bed
 ```
