@@ -1,7 +1,7 @@
 # RNAseq_QuantSeq
 - Lexogen's QuantSeq (3'mRNA-Seq) analysis pipeline
-- Simple bash script is described in below. This script follows Lexogen's data analysis guide (https://www.lexogen.com/quantseq-data-analysis/).
-- Nextflow script is in in the Nextflow folder.
+- Command line for each processing steps are described in below. This script follows and modified from Lexogen's data analysis guide (https://www.lexogen.com/quantseq-data-analysis/).
+- Please see the script for the nextflow.
 
 
 ## Install required software
