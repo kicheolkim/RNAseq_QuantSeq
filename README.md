@@ -1,5 +1,8 @@
 # RNAseq_QuantSeq
-Lexogen's QuantSeq (3'mRNA-Seq) analysis pipeline
+. Lexogen's QuantSeq (3'mRNA-Seq) analysis pipeline
+. Simple bash script is described in below. This script follows Lexogen's analysis guide.
+. Nextflow script is in in the Nextflow folder.
+
 
 ## Install required software
 $ conda install -c bioconda star subread multiqc samtools cutadapt
