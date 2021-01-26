@@ -21,7 +21,7 @@ STAR --runThreadN 8 --runMode genomeGenerate --genomeDir ./STARindex --genomeFas
 
 ---
 ## Workflow with nextflow script
-Run pipeline with nextflow (https://www.nextflow.io/)
+Run pipeline using nextflow (https://www.nextflow.io/)
 
 ```
 nextflow run nf_QuantSeq.sh --read '/data/fastq/*.fastq.gz' --genome '/data/genome/STARindex'
