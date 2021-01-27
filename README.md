@@ -1,34 +1,43 @@
 # RNAseq_QuantSeq
 - Lexogen's QuantSeq (3'mRNA-Seq) analysis pipeline
 - Command line for each processing steps are described in below. This script follows and modified from Lexogen's data analysis guide (https://www.lexogen.com/quantseq-data-analysis/).
-- Please see the script for the nextflow.
 
-## Install required software
+#### 2 way to processing dataset
+1. NGS processing pipeline using Nextflow
+2. NGS processing pipeline using command line script
+
+
+### Install required software
 ```
 conda install -c bioconda star subread multiqc samtools cutadapt
 conda install nextflow fastqc bbmap
 ```
 
-### Convert GTF to bed
+#### Convert GTF to bed
 ```
 cat gencode.vM25.primary_assembly.annotation.gtf | awk 'BEGIN{FS="\t";OFS="\t"}{if($1 ~ /^ch/){split($9,a,";");print $1,$4-1,$5,a[1],"0",$7,$4-1,$4-1,"255,0,0",1,$5-$4,$4-1}else{print $0}}' | sed 's/gene_id //g' | tr -d '"' > gencode.vM25.primary_assembly.annotation.bed
 ```
 
-### Create STAR index
+#### Create STAR index
 ```
 STAR --runThreadN 8 --runMode genomeGenerate --genomeDir ./STARindex --genomeFastaFiles GRCm38.primary_assembly.genome.fa --sjdbGTFfile gencode.vM25.primary_assembly.annotation.gtf --sjdbOverhang 49 --outFileNamePrefix ./STARindex/GRCm38_50bp
 ```
 
 ---
-## Workflow with nextflow script - [it hasn't been tested yet]
-Run pipeline using nextflow (https://www.nextflow.io/)
+### Workflow with nextflow script - [it hasn't been tested yet]
 
+1. Run pipeline using nextflow (https://www.nextflow.io/)
 ```
 nextflow run nf_QuantSeq.sh --read '/data/fastq/*.fastq.gz' --gtf '/data/genome/gencode.vM25.primary_assembly.annotation.gtf' --staridx '/data/genome/STARindex'
 ```
 
+2. Further analysis 
+- Analysis_DE.R: Script for differential expression analysis using DESeq2
+- Other potential analysis: Functional enrichment analysis, etc.
+
+
 ---
-## Workflow in the command line (Based on Lexogen's analysis guide)
+### Workflow in the command line (Based on Lexogen's analysis guide)
 Current workflow consider 50bp single-end sequencing and gencode mouse genome.
 
 1. Run FastQC for all samples
