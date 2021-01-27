@@ -20,7 +20,7 @@ STAR --runThreadN 8 --runMode genomeGenerate --genomeDir ./STARindex --genomeFas
 ```
 
 ---
-## Workflow with nextflow script - it hasn't been tested yet
+## Workflow with nextflow script - [it hasn't been tested yet]
 Run pipeline using nextflow (https://www.nextflow.io/)
 
 ```
