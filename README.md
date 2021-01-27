@@ -66,6 +66,8 @@ featureCounts -T 8 -s 1 -t exon -g gene_id -a /data/gencode_M25/gencode.vM25.pri
 
 6. Further analysis (differential expression)
 
+- Analysis_DE.R: Script for differential expression analysis using DESeq2
+
 
 ---
 [Created by Kicheol Kim - Updated Jan 26. 2021]
