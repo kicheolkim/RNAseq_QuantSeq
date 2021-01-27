@@ -64,9 +64,10 @@ for bamfile in /data/star_out/*/*_Aligned.sortedByCoord.out.bam ; do samtools in
 featureCounts -T 8 -s 1 -t exon -g gene_id -a /data/gencode_M25/gencode.vM25.primary_assembly.annotation.gtf -o gene_featureCounts_output.txt ./sample1/sample1_Aligned.sortedByCoord.out.bam ./sample2/sample2_Aligned.sortedByCoord.out.bam ./sample3/sample3_Aligned.sortedByCoord.out.bam
 ```
 
-6. Further analysis (differential expression)
+6. Further analysis 
 
 - Analysis_DE.R: Script for differential expression analysis using DESeq2
+- Other potential analysis: Functional enrichment analysis, etc.
 
 
 ---
