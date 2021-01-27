@@ -2,10 +2,6 @@
 - Lexogen's QuantSeq (3'mRNA-Seq) analysis pipeline
 - Command line for each processing steps are described in below. This script follows and modified from Lexogen's data analysis guide (https://www.lexogen.com/quantseq-data-analysis/).
 
-#### 2 way to processing dataset
-1. NGS processing pipeline using Nextflow
-2. NGS processing pipeline using command line script
-
 
 ### Install required software
 ```
@@ -22,6 +18,10 @@ cat gencode.vM25.primary_assembly.annotation.gtf | awk 'BEGIN{FS="\t";OFS="\t"}{
 ```
 STAR --runThreadN 8 --runMode genomeGenerate --genomeDir ./STARindex --genomeFastaFiles GRCm38.primary_assembly.genome.fa --sjdbGTFfile gencode.vM25.primary_assembly.annotation.gtf --sjdbOverhang 49 --outFileNamePrefix ./STARindex/GRCm38_50bp
 ```
+
+## 2 way to processing dataset
+1. NGS processing pipeline using Nextflow
+2. NGS processing pipeline using command line script
 
 ---
 ### Workflow with nextflow script - [it hasn't been tested yet]
