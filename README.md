@@ -1,5 +1,6 @@
 # RNAseq_QuantSeq
 - Lexogen's QuantSeq (3'mRNA-Seq) analysis pipeline
+- Nextflow for pre-processing, R for differential expression analysis
 - Command line for each processing steps are described in below. This script follows and modified from Lexogen's data analysis guide (https://www.lexogen.com/quantseq-data-analysis/).
 
 
